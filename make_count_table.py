@@ -17,17 +17,17 @@ def main():
             count[spl[0]][spl[1]] = spl[2]
             all_gene[spl[1]] = ""
 
-    print count
+
     result = [""]
     for key, value in all_gene.items():
         result.append(key)
     print '\t'.join(result)
 
-    for key, value in count.items():
-        result = [key]
+    for sample, value in count.items():
+        result = [sample]
         for gene in all_gene.items():
-            if count[key].has_key(gene[0]):
-                result.append(count[key][gene[0]])
+            if value.has_key(gene[0]):
+                result.append(value[gene[0]])
             else:
                 result.append("0")
         print '\t'.join(result)
