@@ -26,7 +26,10 @@ def main():
     for key, value in count.items():
         result = [key]
         for gene in all_gene.items():
-            result.append(count[key][gene[0]])
+            if count[key].has_key(gene[0]):
+                result.append(count[key][gene[0]])
+            else:
+                result.append("0")
         print '\t'.join(result)
 
 
